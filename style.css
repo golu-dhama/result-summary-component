@@ -1,0 +1,359 @@
+/* ================= GLOBAL ================= */
+
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ================= RESULT CARD ================= */
+
+.result{
+  width: 350px;
+  height: 450px;
+  background: linear-gradient(180deg, #3b36d1, #5b5bcf);
+  border-radius: 20px;
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.text{
+  font-size: 24px;
+  color: white;
+  letter-spacing: 4px;
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+}
+
+/* ================= PERCENTAGE CIRCLE (CSS ONLY) ================= */
+
+.circle{
+  margin-top: 90px;
+  height: 160px;
+  width: 160px;
+
+  border: 4px solid greenyellow;
+  border-radius: 50%;
+
+  font-size: 80px;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+/* ================= DETAILS CARD ================= */
+
+.details{
+  width: 350px;
+  height: 450px;
+  background: #fff;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  box-shadow: 0 10px 20px white;
+}
+
+/* hover drawer */
+.container:has(.result:hover) .details{
+  transform: translateX(100%);
+  border: 4px solid green;
+  
+}
+
+.result:hover{
+  border: 4px solid white;
+  box-shadow: 10px 10px 20px white;
+}
+.result:hover .result-message{
+  transform: scale(1.3) translateY(-5px);
+  box-shadow: 20px 20px 90px white;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  background-color: green;
+  border: 2px solid white;
+}
+.result:hover .result-grade{
+  transform: scale(1.2);
+  color: black;
+  background-color: white;
+}
+/* ================= SUMMARY TITLE ================= */
+
+.summary-title{
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #3b36d1;
+
+  margin: 20px;
+  padding: 10px 22px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(59, 54, 209, 0.15),
+    rgba(91, 91, 207, 0.25)
+  );
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 10px hsla(240, 19%, 72%, 0.925),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* ================= SUBJECTS ================= */
+
+.subjects{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.subject{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.name{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score{
+  font-weight: 700;
+  color: #303b5a;
+}
+
+/* subject colors */
+
+.python{
+  background: hsl(0, 100%, 95%);
+  color: hsl(0, 70%, 45%);
+  font-size: 18px;
+}
+
+.javascript{
+  background: hsl(40, 100%, 95%);
+  color: hsl(40, 90%, 45%);
+  font-size: 18px;
+}
+
+.java{
+  background: hsl(160, 100%, 95%);
+  color: hsl(160, 60%, 35%);
+  font-size: 18px;
+}
+
+.cpp{
+  background: hsl(240, 100%, 96%);
+  color: hsl(240, 70%, 45%);
+  font-size: 18px;
+}
+
+.dsa{
+  background: hsl(280, 100%, 96%);
+  color: hsl(280, 60%, 45%);
+  font-size: 18px;
+}
+
+/* ================= TOTAL ================= */
+
+.total{
+  margin: 16px 20px 20px;
+  padding: 14px 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  color: #1f7a3f;
+
+  background: linear-gradient(
+    135deg,
+    rgba(46, 204, 113, 0.18),
+    rgba(46, 204, 113, 0.32)
+  );
+
+  border-radius: 16px;
+}
+
+/* ================= NAME OVERLAY ================= */
+
+.name-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+}
+
+.name-card{
+  width: 320px;
+  padding: 30px 25px;
+
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  text-align: center;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+.name-card h2{
+  font-size: 24px;
+  font-weight: 800;
+  color: #3b36d1;
+  letter-spacing: 1px;
+}
+
+.name-card input{
+  height: 48px;
+  padding: 0 16px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  border-radius: 12px;
+  border: 2px solid transparent;
+
+  background: #f3f4ff;
+  color: #303b5a;
+
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.name-card input:focus{
+  border-color: #3b36d1;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(59,54,209,0.15);
+}
+
+.name-card button{
+  height: 46px;
+  border: none;
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: white;
+  cursor: pointer;
+
+  background: linear-gradient(
+    135deg,
+    #3b36d1,
+    #5b5bcf
+  );
+
+  box-shadow: 0 10px 25px rgba(59,54,209,0.4);
+  transition: 0.3s ease;
+}
+
+.name-card button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(59,54,209,0.55);
+}
+
+/* ================= RESULT INFO ================= */
+
+.result-info{
+  margin-top: auto;
+  margin-bottom: 24px;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.student-name{
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.329);
+}
+
+.result-message{
+  padding: 6px 16px;
+  border-radius: 999px;
+
+  font-size: 18px;
+  font-weight: 700;
+  margin: auto;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+}
+
+.result-grade{
+  padding: 6px 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  font-weight: 800;
+  margin: auto;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.1)
+  );
+
+  color: #fff;
+}

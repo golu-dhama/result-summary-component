@@ -1,0 +1,113 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <!-- ================= META ================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon_io/android-chrome-192x192.png">
+    <!-- ================= STYLES ================= -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Result Summary Component</title>
+    </head>
+
+    <body>
+
+    <!-- =====================================================
+        NAME OVERLAY (User must enter name before result)
+    ====================================================== -->
+    <div class="name-overlay">
+        <div class="name-card">
+
+        <h2>Enter Your Name</h2>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Your Name"
+            autocomplete="off"
+        />
+
+        <button id="startBtn">Continue</button>
+
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+        MAIN CONTAINER (Result + Details Cards)
+    ====================================================== -->
+    <div class="container">
+
+        <!-- ================= RESULT CARD ================= -->
+        <div class="result">
+
+        <!-- Title -->
+        <h2 class="text">Your Result</h2>
+
+        <!-- Percentage Circle (NORMAL CSS CIRCLE ONLY) -->
+        <div class="circle">
+            <p class="number">98%</p>
+        </div>
+
+        <!-- Result Info -->
+        <div class="result-info">
+            <p class="student-name"></p>
+            <p class="result-message"></p>
+            <p class="result-grade"></p>
+        </div>
+
+        </div>
+
+
+        <!-- ================= DETAILS CARD ================= -->
+        <div class="details">
+
+        <!-- Summary Title -->
+        <h2 class="summary-title">Summary</h2>
+
+        <!-- Subjects List -->
+        <div class="subjects">
+
+            <div class="subject python">
+            <span class="name">Python :</span>
+            <span class="score">80 / 100</span>
+            </div>
+
+            <div class="subject javascript">
+            <span class="name">JavaScript :</span>
+            <span class="score">92 / 100</span>
+            </div>
+
+            <div class="subject java">
+            <span class="name">Java :</span>
+            <span class="score">61 / 100</span>
+            </div>
+
+            <div class="subject cpp">
+            <span class="name">C++ :</span>
+            <span class="score">73 / 100</span>
+            </div>
+
+            <div class="subject dsa">
+            <span class="name">DSA :</span>
+            <span class="score">94 / 100</span>
+            </div>
+
+        </div>
+
+        <!-- Total Score -->
+        <div class="total">
+            Total : <span class="total-score">400</span> / 500
+        </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= LOGIC ================= -->
+    <script src="logic.js"></script>
+
+    </body>
+    </html>
